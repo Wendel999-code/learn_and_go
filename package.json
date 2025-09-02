@@ -1,0 +1,11 @@
+{
+  "name": "learnandgo",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "i:frontend": "npm --prefix frontend install",
+    "i:backend": "npm --prefix backend install",
+    "add:frontend": "npm --prefix frontend install",
+    "add:backend": "npm --prefix backend install"
+  }
+}

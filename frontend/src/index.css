@@ -1,0 +1,122 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Theme variables */
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  /* Shadcn core colors */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+
+  /* DriveAcademy extracted colors */
+  --color-brand-blue: #2563eb; /* Tailwind blue-600 */
+  --color-brand-blue-hover: #1d4ed8; /* Tailwind blue-700 */
+  --color-brand-red: #dc2626; /* Tailwind red-600 */
+  --color-brand-red-hover: #b91c1c; /* Tailwind red-700 */
+  --color-brand-yellow: #d97706; /* Tailwind yellow-600 */
+  --color-brand-yellow-hover: #b45309; /* Tailwind yellow-700 */
+  --color-gray-light: #f9fafb; /* bg-gray-50 */
+  --color-gray-mid: #f3f4f6; /* bg-gray-100 / light sections */
+  --color-gray-dark: #1f2937; /* footer text bg-gray-900 */
+}
+
+/* Light theme */
+:root {
+  --radius: 0.65rem;
+
+  --background: var(--color-gray-light);
+  --foreground: #111827; /* text-gray-900 */
+  --card: #ffffff;
+  --card-foreground: #111827;
+
+  --popover: #ffffff;
+  --popover-foreground: #111827;
+
+  --primary: var(--color-brand-blue);
+  --primary-foreground: #ffffff;
+
+  --secondary: #6b7280; /* text-gray-600 */
+  --secondary-foreground: #ffffff;
+
+  --muted: #d1d5db; /* text-gray-400 */
+  --muted-foreground: #111827;
+
+  --accent: var(--color-brand-yellow);
+  --accent-foreground: #111827;
+
+  --destructive: var(--color-brand-red);
+  --border: #e5e7eb; /* Tailwind border-gray-200 */
+  --input: #f9fafb;
+  --ring: var(--color-brand-blue);
+}
+
+/* Dark theme */
+.dark {
+  --background: #111827; /* dark bg */
+  --foreground: #f9fafb; /* light text */
+
+  --card: #1f2937;
+  --card-foreground: #f9fafb;
+
+  --popover: #1f2937;
+  --popover-foreground: #f9fafb;
+
+  --primary: var(--color-brand-blue);
+  --primary-foreground: #ffffff;
+
+  --secondary: #9ca3af; /* text-gray-400/500 */
+  --secondary-foreground: #f9fafb;
+
+  --muted: #374151;
+  --muted-foreground: #f9fafb;
+
+  --accent: var(--color-brand-yellow);
+  --accent-foreground: #111827;
+
+  --destructive: var(--color-brand-red);
+  --border: #374151;
+  --input: #1f2937;
+  --ring: var(--color-brand-blue);
+}
+
+/* Base styles */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  .bg-theme {
+    @apply bg-white dark:bg-gray-900 transition-colors duration-500;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
