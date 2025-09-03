@@ -3,7 +3,8 @@ FROM node:22-alpine AS builder
 WORKDIR /app
 
 # Copy package.json and install ALL deps (including dev for TS)
-COPY package*.json tsconfig.json ./
+COPY package*.json ./ 
+COPY tsconfig.json ./
 RUN npm install
 
 # Copy source code
