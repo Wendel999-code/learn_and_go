@@ -2,8 +2,6 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import axios from "axios";
-import api from "@/axios/axios";
 
 function Hero() {
   // const handlePayWithGCash = async (e: React.FormEvent) => {

@@ -1,0 +1,32 @@
+name: CI - Docker Compose
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Build and run docker-compose
+        run: docker compose -f docker-compose.yaml up -d --build
+
+      - name: Check running containers
+        run: docker ps -a
+
+      # (Optional) Run tests in backend
+      - name: Run backend tests
+        run: docker compose exec -T backend npm test
+
+      # (Optional) Run tests in frontend
+      - name: Run frontend tests
+        run: docker compose exec -T frontend npm test

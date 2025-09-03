@@ -1,9 +1,5 @@
-import React from 'react'
-
 function AdminLayout() {
-  return (
-    <div>AdminLayout</div>
-  )
+  return <div>AdminLayout</div>;
 }
 
-export default AdminLayout
+export default AdminLayout;
