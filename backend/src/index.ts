@@ -9,7 +9,7 @@ const app = express();
 app.use(
   cors({
     origin: [
-      "https://learn-and-go-1.onrender.com", // deployed frontend
+      "http://learn-and-go-1.onrender.com", // deployed frontend
       "http://localhost:5173", // for local dev
     ],
     credentials: true,
